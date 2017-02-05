@@ -74,10 +74,12 @@ score SUBJECT_NEIGHBOUR 0.5
 # - at least two more parameter follow
 uri SPAM_LINK_1 /\/[a-z]+\.php\?\w=[a-zA-Z0-9]+(&[\w\d]+=[a-zA-Z0-9]+){2,}/i
 score SPAM_LINK_1 0.2
+describe SPAM_LINK_1 Spam link
 
 # same as above but focused on the link title
 rawbody SPAM_LINK_2 /\>.*(profile is here|new photos|photos are here).*\<\/a\>/i
 score SPAM_LINK_2 0.2
+describe SPAM_LINK_2 Spam link title
 
 # Something like ..../l/lt2K2240EH14R/1014LP2140G4657WU60A33287012SM1334722588
 # Common parts:
@@ -85,17 +87,21 @@ score SPAM_LINK_2 0.2
 # - three parts in total
 uri SPAM_LINK_3  /\/\w\/\w{10,}\/\w{10,}/i
 score SPAM_LINK_3 0.2
+describe SPAM_LINK_3 Spam link
 
 #--------------------------------------------------
 # Mime matching
 #--------------------------------------------------
-mimeheader DOC_ATTACH2 Content-Disposition =~ /filename\=.*\.docx?/i
-score DOC_ATTACH2 1.2
-mimeheader XLS_ATTACH2 Content-Disposition =~ /filename\=.*\.xlsx?/i
-score XLS_ATTACH2 1.2
+mimeheader DOC_ATTACHED Content-Disposition =~ /filename\=.*\.docx?/i
+score DOC_ATTACHED 1.0
+describe DOC_ATTACHED Contains .doc or .docx attachment
 
-mimeheader __ZIP_ATTACH Content-Disposition =~ /filename\=.*\.zip/i
+mimeheader XLS_ATTACHED Content-Disposition =~ /filename\=.*\.xlsx?/i
+score XLS_ATTACHED 1.0
+describe XLS_ATTACHED Contains .xls or .xlsx attachment
 
+mimeheader __ZIP_ATTACHED Content-Disposition =~ /filename\=.*\.zip/i
+describe __ZIP_ATTACHED Contains .zip attachment
 
 #--------------------------------------------------
 # Text matching
@@ -104,8 +110,10 @@ header __SUBJECT_FUCK Subject =~ /f[ua5\&\%]ck/i
 body __BODY_FUCK /\s+(fuck|sex|masturbate|anal)/i
 meta FUCKED_MAIL (__SUBJECT_FUCK || __BODY_FUCK )
 score FUCKED_MAIL 0.5
+describe FUCKED_MAIL Contains variations of 'fuck' in the subject and/or body
 
 header __SUBJECT_FAX_RECEIVED Subject =~ /You have 1 new fax, document/i
 header __SUBJECT_FAX_RECEIVED2 Subject =~ /You have received a new fax, document /i
 meta FAX_RECEIVED ((__SUBJECT_FAX_RECEIVED || __SUBJECT_FAX_RECEIVED2) && __ZIP_ATTACH)
 score FAX_RECEIVED 1.2
+
