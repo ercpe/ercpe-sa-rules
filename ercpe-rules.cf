@@ -29,6 +29,9 @@ header OUTDATED_PHP X-Mailer =~ /PHP v?5\.[1234].*/i
 score OUTDATED_PHP 0.1
 describe OUTDATED_PHP Mail send from an outdated PHP version
 
+header X_MAILER_SENDEMAIL X-Mailer =~ /sendEmail/i
+score X_MAILER_SENDEMAIL 0.2
+
 header VULN_PHPMAILER X-Mailer =~ /PHPMailer 5\.2\.[0-9] /i
 score VULN_PHPMAILER 0.75
 describe VULN_PHPMAILER Mail was sent from a vulnerable version of PHPMailer
