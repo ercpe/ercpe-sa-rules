@@ -13,7 +13,7 @@ header __HIGH_SPAMMY_TLD_RCVD Received =~ /\.(win|bid|top|club|date)\/.*/i
 header __HIGH_SPAMMY_TLD_FROM From =~ /\.(win|bid|top|club|date)\/.*/i
 uri __HIGH_SPAMMY_TLD_URI /\.(win|bid|top|club|date)\/.+/i
 meta HIGH_SPAMMY_TLD (__HIGH_SPAMMY_TLD_RCVD && __HIGH_SPAMMY_TLD_FROM && __HIGH_SPAMMY_TLD_URI)
-score HIGH_SPAMMY_TLD HIGH 1.25
+score HIGH_SPAMMY_TLD 1.25
 describe HIGH_SPAMMY_TLD HIGH spammy tld used in Received, From and link
 
 
