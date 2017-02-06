@@ -76,12 +76,12 @@ score SUBJECT_NEIGHBOUR 0.5
 # - the first parameter name is one char long
 # - at least two more parameter follow
 uri SPAM_LINK_1 /\/[a-z]+\.php\?\w=[a-zA-Z0-9]+(&[\w\d]+=[a-zA-Z0-9]+){2,}/i
-score SPAM_LINK_1 0.2
+score SPAM_LINK_1 0.4
 describe SPAM_LINK_1 Spam link
 
 # same as above but focused on the link title
 rawbody SPAM_LINK_2 /\>.*(profile is here|new photos|photos are here).*\<\/a\>/i
-score SPAM_LINK_2 0.2
+score SPAM_LINK_2 0.4
 describe SPAM_LINK_2 Spam link title
 
 # Something like ..../l/lt2K2240EH14R/1014LP2140G4657WU60A33287012SM1334722588
@@ -89,7 +89,7 @@ describe SPAM_LINK_2 Spam link title
 # - first part is always one character
 # - three parts in total
 uri SPAM_LINK_3  /\/\w\/\w{10,}\/\w{10,}/i
-score SPAM_LINK_3 0.2
+score SPAM_LINK_3 0.4
 describe SPAM_LINK_3 Spam link
 
 #--------------------------------------------------
