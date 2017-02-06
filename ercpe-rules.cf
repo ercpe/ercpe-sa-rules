@@ -67,6 +67,14 @@ header __SUBJECT_NEXT_DOOR Subject =~ /next door/i
 meta SUBJECT_NEIGHBOUR (__SUBJECT_NEIGHBOR || __SUBJECT_NEXT_DOOR)
 score SUBJECT_NEIGHBOUR 0.5
 
+header __SUBJECT_VIAGRA Subject =~ /viagra/i
+header __SUBJECT_PILLS Subject =~ /pills/i
+header __SUBJECT_HEALTH_SECRET Subject =~ /health secret/i
+
+meta SUBJECT_HEALTH (__SUBJECT_VIAGRA || __SUBJECT_PILLS || __SUBJECT_HEALTH_SECRET)
+score SUBJECT_HEALTH 0.2
+describe SUBJECT_HEALTH health-related subject
+
 #--------------------------------------------------
 # uri matching
 #--------------------------------------------------
@@ -120,3 +128,11 @@ header __SUBJECT_FAX_RECEIVED2 Subject =~ /You have received a new fax, document
 meta FAX_RECEIVED ((__SUBJECT_FAX_RECEIVED || __SUBJECT_FAX_RECEIVED2) && __ZIP_ATTACH)
 score FAX_RECEIVED 1.2
 
+
+body __BODY_VIAGRA Subject =~ /viagra/i
+body __BODY_PILLS Subject =~ /pills/i
+body __BODY_HEALTH_SECRET Subject =~ /health secret/i
+
+meta BODY_HEALTH (__BODY_VIAGRA || __BODY_PILLS || __BODY_HEALTH_SECRET)
+score BODY_HEALTH 0.2
+describe BODY_HEALTH health-related body text
