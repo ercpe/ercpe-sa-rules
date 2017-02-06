@@ -129,9 +129,9 @@ meta FAX_RECEIVED ((__SUBJECT_FAX_RECEIVED || __SUBJECT_FAX_RECEIVED2) && __ZIP_
 score FAX_RECEIVED 1.2
 
 
-body __BODY_VIAGRA Subject =~ /viagra/i
-body __BODY_PILLS Subject =~ /pills/i
-body __BODY_HEALTH_SECRET Subject =~ /health secret/i
+body __BODY_VIAGRA /viagra/i
+body __BODY_PILLS /pills/i
+body __BODY_HEALTH_SECRET /health secret/i
 
 meta BODY_HEALTH (__BODY_VIAGRA || __BODY_PILLS || __BODY_HEALTH_SECRET)
 score BODY_HEALTH 0.2
