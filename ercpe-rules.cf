@@ -75,6 +75,9 @@ meta SUBJECT_HEALTH (__SUBJECT_VIAGRA || __SUBJECT_PILLS || __SUBJECT_HEALTH_SEC
 score SUBJECT_HEALTH 0.2
 describe SUBJECT_HEALTH health-related subject
 
+header SUBJECT_DARLEHEN Subject =~ /Darlehen Angebot jetzt bewerben/i
+score SUBJECT_DARLEHEN 1.0
+
 #--------------------------------------------------
 # uri matching
 #--------------------------------------------------
