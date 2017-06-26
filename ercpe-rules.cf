@@ -78,6 +78,11 @@ describe SUBJECT_HEALTH health-related subject
 header SUBJECT_DARLEHEN Subject =~ /Darlehen Angebot jetzt bewerben/i
 score SUBJECT_DARLEHEN 1.0
 
+header __FROM_DAVIS_WRIGHT From =~ /Davis Wright/i
+header __SUBJECT_LEG_DARLEHEN =~ /Legitimes Darlehen Angebot/i
+meta DAVIS_WRIGHT_DARLEHEN (__FROM_DAVIS_WRIGHT && __FROM_DAVIS_WRIGHT)
+score DAVIS_WRIGHT_DARLEHEN 1.5
+
 #--------------------------------------------------
 # uri matching
 #--------------------------------------------------
