@@ -83,6 +83,10 @@ header __SUBJECT_LEG_DARLEHEN Subject =~ /Legitimes Darlehen Angebot/i
 meta DAVIS_WRIGHT_DARLEHEN (__FROM_DAVIS_WRIGHT && __SUBJECT_LEG_DARLEHEN)
 score DAVIS_WRIGHT_DARLEHEN 1.5
 
+header __FROM_KEVIN_PAGE From =~ /Kevin Page/i
+meta KEVIN_PAGE_DARLEHEN (__FROM_KEVIN_PAGE && SUBJECT_DARLEHEN)
+score KEVIN_PAGE_DARLEHEN 1.5
+
 #--------------------------------------------------
 # uri matching
 #--------------------------------------------------
