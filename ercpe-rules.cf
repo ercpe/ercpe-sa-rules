@@ -144,7 +144,7 @@ describe FUCKED_MAIL Contains variations of 'fuck' in the subject and/or body
 
 header __SUBJECT_FAX_RECEIVED Subject =~ /You have 1 new fax, document/i
 header __SUBJECT_FAX_RECEIVED2 Subject =~ /You have received a new fax, document /i
-meta FAX_RECEIVED ((__SUBJECT_FAX_RECEIVED || __SUBJECT_FAX_RECEIVED2) && __ZIP_ATTACH)
+meta FAX_RECEIVED ((__SUBJECT_FAX_RECEIVED || __SUBJECT_FAX_RECEIVED2) && __ZIP_ATTACHED)
 score FAX_RECEIVED 1.2
 
 
