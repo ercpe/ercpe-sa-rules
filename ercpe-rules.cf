@@ -87,6 +87,13 @@ header __FROM_KEVIN_PAGE From =~ /Kevin Page/i
 meta KEVIN_PAGE_DARLEHEN (__FROM_KEVIN_PAGE && SUBJECT_DARLEHEN)
 score KEVIN_PAGE_DARLEHEN 1.5
 
+# "Domain Expiration SEO" spam
+header __SUBJECT_EXP_SEO Subject =~ /Expiration SEO/i
+header __FROM_EXP_SEO FROM =~ /Domain Expiration SEO/i
+meta EXPIRATION_SEO (__SUBJECT_EXP_SEO && __FROM_EXP_SEO)
+score EXPIRATION_SEO 1.0
+
+
 #--------------------------------------------------
 # uri matching
 #--------------------------------------------------
