@@ -131,6 +131,23 @@ uri SPAM_LINK_3  /\/\w\/\w{10,}\/\w{10,}/i
 score SPAM_LINK_3 0.4
 describe SPAM_LINK_3 Spam link
 
+# /pass.php?utm_source=6900l3njtv&utm_medium=nc6600mc98&utm_campaign=a1q4sxq0wo&utm_term=tvec4xo652&utm_content=403g22e07g
+# Common parts
+# - always a .php file in the root of the domain
+# - only GA tracking parameters
+# - values for utm_source, utm_medium and utm_campaign are always the same (at least between 2017-07 and 2017-10),
+#   utm_term varies slightly and utm_content is random
+# - all tracking parameters have 10 chars
+
+uri SPAM_LINK_4 /\/[a-z]+\.php\?utm_source=[a-zA-Z0-9]{10}&utm_medium=[a-zA-Z0-9]{10}&utm_campaign=[a-zA-Z0-9]{10}&utm_term=[a-zA-Z0-9]{10}&utm_content=[a-zA-Z0-9]{10}/i
+score SPAM_LINK_4 0.4
+describe SPAM_LINK_4 Spam link
+
+uri SPAM_LINK_4_EXTRA /\/[a-z]+\.php\?utm_source=6900l3njtv&utm_medium=nc6600mc98&utm_campaign=a1q4sxq0wo&utm_term=[a-zA-Z0-9]{10}&utm_content=[a-zA-Z0-9]{10}/i
+score SPAM_LINK_4_EXTRA 0.4
+describe SPAM_LINK_4_EXTRA Spam link (extra score)
+
+
 #--------------------------------------------------
 # Mime matching
 #--------------------------------------------------
