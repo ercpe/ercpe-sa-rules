@@ -89,10 +89,22 @@ score KEVIN_PAGE_DARLEHEN 1.5
 
 # "Domain Expiration SEO" spam
 header __SUBJECT_EXP_SEO Subject =~ /Expiration SEO/i
-header __FROM_EXP_SEO FROM =~ /Domain Expiration SEO/i
+header __FROM_EXP_SEO From =~ /Domain Expiration SEO/i
 meta EXPIRATION_SEO (__SUBJECT_EXP_SEO && __FROM_EXP_SEO)
 score EXPIRATION_SEO 1.0
 
+# "SEO issue" spam
+header __SUBJECT_SEO_ISSUE Subject =~ /SEO Issue/i
+body __BODY_SEO_ISSUE /\s+(Search Specialist|Hello Team)/i
+meta SEO_ISSUE (__SUBJECT_SEO_ISSUE && __BODY_SEO_ISSUE)
+score SEO_ISSUE 1.0
+
+# Domain Alert
+header __SUBJECT_DOMAIN_ALERT Subject =~ /This is your Final Reminder/i
+header __FROM_DOMAIN_ALERT From =~ /Internet Services/i
+body __BODY_DOMAIN_ALERT /\s+search engine registration/i
+meta DOMAIN_ALERT (__SUBJECT_DOMAIN_ALERT && __FROM_DOMAIN_ALERT && __BODY_DOMAIN_ALERT)
+score DOMAIN_ALERT 1.0
 
 #--------------------------------------------------
 # uri matching
