@@ -92,19 +92,22 @@ header __SUBJECT_EXP_SEO Subject =~ /Expiration SEO/i
 header __FROM_EXP_SEO From =~ /Domain Expiration SEO/i
 meta EXPIRATION_SEO (__SUBJECT_EXP_SEO && __FROM_EXP_SEO)
 score EXPIRATION_SEO 1.0
+describe EXPIRATION_SEO Variation of Domain SEO spam
 
 # "SEO issue" spam
 header __SUBJECT_SEO_ISSUE Subject =~ /SEO Issue/i
 body __BODY_SEO_ISSUE /\s+(Search Specialist|Hello Team)/i
 meta SEO_ISSUE (__SUBJECT_SEO_ISSUE && __BODY_SEO_ISSUE)
 score SEO_ISSUE 1.0
+describe SEO_ISSUE Variation of Domain SEO spam
 
 # Domain Alert
-header __SUBJECT_DOMAIN_ALERT Subject =~ /This is your Final Reminder/i
-header __FROM_DOMAIN_ALERT From =~ /Internet Services/i
+header __SUBJECT_DOMAIN_ALERT Subject =~ /This is your Final (Reminder|Notice)/i
+header __FROM_DOMAIN_ALERT From =~ /(Internet Services|Domain Notice)/i
 body __BODY_DOMAIN_ALERT /\s+search engine registration/i
 meta DOMAIN_ALERT (__SUBJECT_DOMAIN_ALERT && __FROM_DOMAIN_ALERT && __BODY_DOMAIN_ALERT)
 score DOMAIN_ALERT 1.0
+describe DOMAIN_ALERT Variations of search engine registration spam
 
 #--------------------------------------------------
 # uri matching
