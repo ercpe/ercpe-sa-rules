@@ -169,7 +169,7 @@ describe __ZIP_ATTACHED Contains .zip attachment
 # Text matching
 #--------------------------------------------------
 header __SUBJECT_FUCK Subject =~ /f[ua5\&\%]ck/i
-body __BODY_FUCK /\s+(fuck|sex|masturbate|anal)/i
+body __BODY_FUCK /\s+(fuck|sex|masturbate|anal)\s+/i
 meta FUCKED_MAIL (__SUBJECT_FUCK || __BODY_FUCK )
 score FUCKED_MAIL 0.5
 describe FUCKED_MAIL Contains variations of 'fuck' in the subject and/or body
