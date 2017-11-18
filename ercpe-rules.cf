@@ -109,6 +109,11 @@ meta DOMAIN_ALERT (__SUBJECT_DOMAIN_ALERT && __FROM_DOMAIN_ALERT && __BODY_DOMAI
 score DOMAIN_ALERT 1.0
 describe DOMAIN_ALERT Variations of search engine registration spam
 
+header __FROM_BITCOIN_CODE From =~ /bestofmesh.com/i
+uri __BITCOIN_CODE_LINK /track.bestofmesh.com.*/i
+meta BITCOIN_CODE (__FROM_BITCOIN_CODE && __FROM_BITCOIN_CODE)
+score BITCOIN_CODE 0.8
+
 #--------------------------------------------------
 # uri matching
 #--------------------------------------------------
