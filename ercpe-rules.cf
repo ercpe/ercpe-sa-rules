@@ -89,7 +89,7 @@ score KEVIN_PAGE_DARLEHEN 1.5
 
 # "Domain Expiration SEO" spam
 header __SUBJECT_EXP_SEO Subject =~ /Expiration SEO/i
-header __FROM_EXP_SEO From =~ /Domain Expiration SEO/i
+header __FROM_EXP_SEO From =~ /(Domain Expiration SEO|Final Reminder)/i
 meta EXPIRATION_SEO (__SUBJECT_EXP_SEO && __FROM_EXP_SEO)
 score EXPIRATION_SEO 1.0
 describe EXPIRATION_SEO Variation of Domain SEO spam
