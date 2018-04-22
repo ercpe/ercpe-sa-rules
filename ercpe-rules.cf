@@ -155,6 +155,11 @@ uri SPAM_LINK_4_EXTRA /\/[a-z]+\.php\?utm_source=6900l3njtv&utm_medium=nc6600mc9
 score SPAM_LINK_4_EXTRA 0.4
 describe SPAM_LINK_4_EXTRA Spam link (extra score)
 
+# sth. /mw/index.php/campaigns/pc118pw7p78bf/track-url/eo948g9ba3535/955e46674ff54a5792d9fa1782e483d77e4fdfc8
+uri SPAM_LINK_5 /\/campaigns\/[a-zA-Z0-9]{13}\/track-url\/[a-zA-Z0-9]{13}\/[a-zA-Z0-9]{40}/i
+score SPAM_LINK_5 0.4
+describe SPAM_LINK_5 Spam link
+
 
 #--------------------------------------------------
 # Mime matching
