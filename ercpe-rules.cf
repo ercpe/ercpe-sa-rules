@@ -160,6 +160,10 @@ uri SPAM_LINK_5 /\/campaigns\/[a-zA-Z0-9]{13}\/track-url\/[a-zA-Z0-9]{13}\/[a-zA
 score SPAM_LINK_5 0.4
 describe SPAM_LINK_5 Spam link
 
+uri __SPAM_LINK_6 /\/[a-zA-Z0-9]{13,18}\/[a-zA-Z0-9-_]{43}\/[a-zA-Z0-9-_]{107,128}/i
+score __SPAM_LINK_6 0.4
+meta SPAM_LINK_6 (HTML_MESSAGE BODY && T_REMOTE_IMAGE && __SPAM_LINK_6)
+describe SPAM_LINK_6 Spam link
 
 #--------------------------------------------------
 # Mime matching
