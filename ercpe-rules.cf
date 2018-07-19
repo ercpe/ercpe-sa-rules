@@ -1,11 +1,11 @@
 #--------------------------------------------------
 # top level domain matching
 #--------------------------------------------------
-header SPAMMY_TLD_IN_RCVD Received =~ /(\.net\.ae|\.net\.id|\.ro|\.ru|\.co\.jp|\.co\.ke|\.AC\.ZA|\.co\.in|\.com\.vn|\.vn|\.cc|\.cu\.ua|\.com\.br|\.gr|\.hr|\.dk|\.win|\.bid|\.tw|\.br|\.pk|\.top|\.club|\.date|\.stream|\.xyz)\s/i
+header SPAMMY_TLD_IN_RCVD Received =~ /(\.net\.ae|\.net\.id|\.ro|\.ru|\.co\.jp|\.co\.ke|\.AC\.ZA|\.co\.in|\.com\.vn|\.vn|\.cc|\.cu\.ua|\.com\.br|\.gr|\.hr|\.dk|\.win|\.bid|\.tw|\.br|\.pk|\.top|\.club|\.date|\.stream|\.xyz|\.trade)\s/i
 score SPAMMY_TLD_IN_RCVD 0.5
 describe SPAMMY_TLD_IN_RCVD Spammy TLD used in Received line
 
-header SPAMMY_TLD_IN_FROM From =~ /(\.net\.ae|\.net\.id|\.ro|\.ru|\.co\.jp|\.co\.ke|\.AC\.ZA|\.co\.in|\.com\.vn|\.vn|\.cc|\.cu\.ua|\.com\.br|\.gr|\.hr|\.dk|\.win|\.bid|\.tw|\.br|\.pk|\.top|\.club|\.date|\.stream|\.xyz)>$/i
+header SPAMMY_TLD_IN_FROM From =~ /(\.net\.ae|\.net\.id|\.ro|\.ru|\.co\.jp|\.co\.ke|\.AC\.ZA|\.co\.in|\.com\.vn|\.vn|\.cc|\.cu\.ua|\.com\.br|\.gr|\.hr|\.dk|\.win|\.bid|\.tw|\.br|\.pk|\.top|\.club|\.date|\.stream|\.xyz|\.trade)>$/i
 score SPAMMY_TLD_IN_FROM 0.3
 describe SPAMMY_TLD_IN_FROM Spammy TLD used in From line
 
