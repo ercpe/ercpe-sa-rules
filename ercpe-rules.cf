@@ -164,6 +164,20 @@ uri SPAM_LINK_6 /\/[a-zA-Z0-9]{13,18}\/[a-zA-Z0-9-_]{43}\/[a-zA-Z0-9-_]{107,128}
 score SPAM_LINK_6 0.4
 describe SPAM_LINK_6 Spam link
 
+# looks almost the same as SPAM_LINK_6
+# characteristics:
+# - TLD: .date or .trade
+# - Domain always with leading www.
+# - path:
+#   First part between 7 and 10 chars
+#   Second part between 16 and 22 chars
+#   Third part always(?) 43 chars
+#   Fourth part > 80 chars but varying in length
+uri SPAM_LINK_7_HIGH /www\.[a-zA-Z0-9]+\.(date|trade)\/[a-zA-Z0-9-_]{7,13}\/[a-zA-Z0-9-_]{13,24}\/[a-zA-Z0-9-_]{40,65}\/[a-zA-Z0-9-_]{80,999}/i
+score SPAM_LINK_7_HIGH 1.2
+describe SPAM_LINK_7_HIGH high scored spam link
+
+
 #--------------------------------------------------
 # Mime matching
 #--------------------------------------------------
