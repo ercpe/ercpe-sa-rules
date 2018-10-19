@@ -214,3 +214,9 @@ body __BODY_HEALTH_SECRET /health secret/i
 meta BODY_HEALTH (__BODY_VIAGRA || __BODY_PILLS || __BODY_HEALTH_SECRET)
 score BODY_HEALTH 0.2
 describe BODY_HEALTH health-related body text
+
+
+body __LEAKED_PWD1 /I know [a-zA-Z0-9]{1,99} one of your pass./i
+body __LEAKED_PWD2 /Well, I actually installed a malware on the 18\+ streaming \(porn\) website/i
+meta LEAKED_PWD (__LEAKED_PWD1 && __LEAKED_PWD2)
+score LEAKED_PWD 2.0
