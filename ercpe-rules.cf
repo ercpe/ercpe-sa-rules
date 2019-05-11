@@ -114,6 +114,11 @@ uri __BITCOIN_CODE_LINK /track.bestofmesh.com.*/i
 meta BITCOIN_CODE (__FROM_BITCOIN_CODE && __BITCOIN_CODE_LINK)
 score BITCOIN_CODE 0.8
 
+
+# customlogobuilders.press
+header FROM_CUSTOMLOGOBUILDERS From =~ /customlogobuilders.press/i
+score FROM_CUSTOMLOGOBUILDERS 1.0
+
 #--------------------------------------------------
 # uri matching
 #--------------------------------------------------
