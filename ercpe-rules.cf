@@ -1,16 +1,16 @@
 #--------------------------------------------------
 # top level domain matching
 #--------------------------------------------------
-header SPAMMY_TLD_IN_RCVD Received =~ /(\.net\.ae|\.net\.id|\.ro|\.ru|\.co\.jp|\.co\.ke|\.AC\.ZA|\.co\.in|\.com\.vn|\.vn|\.cc|\.cu\.ua|\.com\.br|\.gr|\.hr|\.dk|\.win|\.bid|\.tw|\.br|\.pk|\.top|\.club|\.date|\.stream|\.xyz|\.trade)\s/i
+header SPAMMY_TLD_IN_RCVD Received =~ /(\.net\.ae|\.net\.id|\.ro|\.ru|\.co\.jp|\.co\.ke|\.AC\.ZA|\.co\.in|\.com\.vn|\.vn|\.cc|\.cu\.ua|\.com\.br|\.gr|\.hr|\.dk|\.win|\.bid|\.tw|\.br|\.pk|\.top|\.club|\.date|\.stream|\.xyz|\.trade|\.icu|\.press)\s/i
 score SPAMMY_TLD_IN_RCVD 0.5
 describe SPAMMY_TLD_IN_RCVD Spammy TLD used in Received line
 
-header SPAMMY_TLD_IN_FROM From =~ /(\.net\.ae|\.net\.id|\.ro|\.ru|\.co\.jp|\.co\.ke|\.AC\.ZA|\.co\.in|\.com\.vn|\.vn|\.cc|\.cu\.ua|\.com\.br|\.gr|\.hr|\.dk|\.win|\.bid|\.tw|\.br|\.pk|\.top|\.club|\.date|\.stream|\.xyz|\.trade)>$/i
+header SPAMMY_TLD_IN_FROM From =~ /(\.net\.ae|\.net\.id|\.ro|\.ru|\.co\.jp|\.co\.ke|\.AC\.ZA|\.co\.in|\.com\.vn|\.vn|\.cc|\.cu\.ua|\.com\.br|\.gr|\.hr|\.dk|\.win|\.bid|\.tw|\.br|\.pk|\.top|\.club|\.date|\.stream|\.xyz|\.trade|\.icu|\.press)>$/i
 score SPAMMY_TLD_IN_FROM 0.5
 describe SPAMMY_TLD_IN_FROM Spammy TLD used in From line
 
-header __HIGH_SPAMMY_TLD_RCVD Received =~ /\.(win|bid|top|club|date|stream|xyz)\/.*/i
-header __HIGH_SPAMMY_TLD_FROM From =~ /\.(win|bid|top|club|date|stream|xyz)\/.*/i
+header __HIGH_SPAMMY_TLD_RCVD Received =~ /\.(win|bid|top|club|date|stream|xyz|icu)\/.*/i
+header __HIGH_SPAMMY_TLD_FROM From =~ /\.(win|bid|top|club|date|stream|xyz|icu)\/.*/i
 uri __HIGH_SPAMMY_TLD_URI /\.(win|bid|top|club|date|stream|xyz)\/.+/i
 meta HIGH_SPAMMY_TLD (__HIGH_SPAMMY_TLD_RCVD && __HIGH_SPAMMY_TLD_FROM && __HIGH_SPAMMY_TLD_URI)
 score HIGH_SPAMMY_TLD 1.25
