@@ -232,7 +232,7 @@ score LEAKED_PWD 2.0
 #--------------------------------------------------
 
 header FROM_MUNGAI From =~ /MUNGAI KIHANYA TRAINING/i
-score FROM_MUNGAI 1.0
+score FROM_MUNGAI 2.5
 
 header FROM_KINETIC From =~ /KINETIC (ENTERPRISES|TECHNOLOGIEZ)/i
 score FROM_KINETIC 1.0
